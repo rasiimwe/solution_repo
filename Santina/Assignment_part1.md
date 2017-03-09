@@ -496,12 +496,14 @@ Let's look at the overlap
 overlapped_genes  <- intersect(
     rownames(head(treatment_model_ET, ngenes_p)), 
     rownames(head(treatment_model_ET2, ngenes_p2))
-    )
-# Find overlap ratio (number of overlapped genes)/(total top hits in our full model)
-(overlap_ratio <- length(overlapped_genes)/ngenes_p2)
+)
+# Find all the unique genes 
+unique_genes <- unique(rownames(head(treatment_model_ET, ngenes_p)),  rownames(head(treatment_model_ET2, ngenes_p2)))
+# Find overlap ratio (number of overlapped genes)/(genes that are found to be differentially expressed in either model)
+(overlap_ratio <- length(overlapped_genes)/length(unique_genes))
 ```
 
-    ## [1] 0.5281804
+    ## [1] 0.4074534
 
 > Plot the distributions of all the p-values for treatment when using both models, i.e., one from the model in Q3 and one from the full model in this question. Compare and comment on the similarity/differences in the shape of the distributions.
 
