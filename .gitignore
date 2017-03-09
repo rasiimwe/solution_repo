@@ -1,0 +1,9 @@
+# Random Mac stuff 
+**/._*
+.DS_Store
+
+# R stuff that I don't care
+**/.Rproj.user
+**/.Rhistory
+**/.RData
+**/.Rprofile
